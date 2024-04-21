@@ -27,10 +27,11 @@
                 <td>{{ $mascota->edad }}</td>
                 <td>{{ $mascota->nombre_dueño }}</td>
                 <td> 
+                    <a href="{{ route('mascotas.edit', ['mascota' => $mascota->id])}}" class="btn btn-warning">Editar</a>
                     <form action="{{ route('mascotas.destroy', ['mascota' => $mascota->id])}}" method="POST" style="display: inline-block">
                         @method('delete')
                         @csrf
-                        <input type="submit" class="btn btn-danger" value="Delete">
+                        <input type="submit" class="btn btn-danger" value="Eliminar">
                     </form>
                 </td>
             </tr>

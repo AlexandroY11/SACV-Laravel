@@ -61,17 +61,31 @@ class MascotaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Mascota $mascota)
     {
-        //
+        $dueños = DB::table('dueños')
+            ->orderBy('nombre')
+            ->orderBy('apellido')
+            ->get();
+        
+        return view('mascotas.edit', compact('mascota'), compact('dueños'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Mascota $mascota)
     {
-        //
+        $mascota->update($request->all());
+
+        $mascotas = DB::table('mascotas')
+            ->join('dueños', 'mascotas.dueño_id', '=', 'dueños.id')
+            ->select('mascotas.*', DB::raw("CONCAT(dueños.nombre, ' ', dueños.apellido) as nombre_dueño"))
+            ->get();
+
+        return view('mascotas.index', compact('mascotas'));
+
     }
 
     /**

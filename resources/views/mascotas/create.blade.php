@@ -14,7 +14,7 @@
         <div id="idHelp" class="form-text">Código de la Mascota *Se crea automáticamente</div>
     </div>
     <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre</label>
+        <label for="nombre" class="form-label">Nombre de Mascota</label>
         <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" name="nombre" placeholder="Nombre de la Mascota">
     </div>
     <div class="mb-3">
@@ -39,8 +39,8 @@
         </select>
     </div>
     <div class="mt-3">
-        <button type="submit" class="btn btn-primary">Save</button>
-        <a href="{{ route('mascotas.index')}}" class="btn btn-danger">Cancel</a>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{{ route('mascotas.index')}}" class="btn btn-danger">Cancelar</a>
     </div>
 </form>
 @endsection
