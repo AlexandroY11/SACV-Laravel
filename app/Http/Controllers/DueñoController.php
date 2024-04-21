@@ -13,7 +13,9 @@ class DueñoController extends Controller
      */
     public function index()
     {
-        //
+        $dueños = Dueño::all();
+
+        return view('dueños.index', compact('dueños'));
     }
 
     /**
