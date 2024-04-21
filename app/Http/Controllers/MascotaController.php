@@ -84,7 +84,7 @@ class MascotaController extends Controller
             ->select('mascotas.*', DB::raw("CONCAT(dueños.nombre, ' ', dueños.apellido) as nombre_dueño"))
             ->get();
 
-        return view('mascotas.index', compact('mascotas'));
+            return redirect()->route('mascotas.index',compact('mascotas'));
 
     }
 
