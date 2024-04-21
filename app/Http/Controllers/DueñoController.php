@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dueño;
 use Illuminate\Http\Request;
 
 class DueñoController extends Controller
@@ -11,7 +12,9 @@ class DueñoController extends Controller
      */
     public function index()
     {
-        //
+        $dueños = Dueño::all();
+
+        return view('dueños.index', compact('dueños'));
     }
 
     /**
