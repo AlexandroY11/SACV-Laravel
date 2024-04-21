@@ -10,5 +10,6 @@ class DueñoSeeder extends Seeder
     public function run()
     {
         Dueño::factory(10)->create();
+        
     }
 }
