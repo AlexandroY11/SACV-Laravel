@@ -11,6 +11,8 @@ class Mascota extends Model
 
     protected $fillable = ['nombre', 'especie', 'raza', 'edad', 'dueño_id'];
 
+    public $timestamps = false;
+
     public function dueño()
     {
         return $this->belongsTo(Dueño::class, 'dueño_id');

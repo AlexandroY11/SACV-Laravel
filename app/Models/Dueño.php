@@ -11,6 +11,8 @@ class Dueño extends Model
 
     protected $fillable = ['nombre', 'apellido', 'direccion', 'telefono', 'email'];
 
+    public $timestamps = false;
+
     public function mascotas()
     {
         return $this->hasMany(Mascota::class);
