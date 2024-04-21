@@ -27,7 +27,11 @@
                 <td>{{ $mascota->edad }}</td>
                 <td>{{ $mascota->nombre_dueño }}</td>
                 <td> 
-                
+                    <form action="{{ route('mascotas.destroy', ['mascota' => $mascota->id])}}" method="POST" style="display: inline-block">
+                        @method('delete')
+                        @csrf
+                        <input type="submit" class="btn btn-danger" value="Delete">
+                    </form>
                 </td>
             </tr>
         @endforeach  

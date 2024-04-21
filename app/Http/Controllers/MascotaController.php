@@ -77,8 +77,16 @@ class MascotaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $mascota = Mascota::find($id);
+        $mascota->delete();
+
+        $mascotas = DB::table('mascotas')
+            ->join('dueños', 'mascotas.dueño_id', '=', 'dueños.id')
+            ->select('mascotas.*', DB::raw("CONCAT(dueños.nombre, ' ', dueños.apellido) as nombre_dueño"))
+            ->get();
+
+        return redirect()->route('mascotas.index',compact('mascotas'));
     }
 }
