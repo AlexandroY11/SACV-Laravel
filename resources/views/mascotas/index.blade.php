@@ -3,18 +3,17 @@
 @section("title", "Mascotas")
 @section("content")
     <h1>Listado de Mascotas</h1>
+    <a href="{{ route('mascotas.create')}}" class="btn btn-success mb-3">Añadir Mascota</a>
     <table class="table">
         <thead>
             <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Especie</th>
-            <th scope="col">Raza</th>
-            <th scope="col">Edad</th>
-            <th scope="col">Dueño</th>
-            <th scope="col">Actions</th>
-
-
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Especie</th>
+                <th scope="col">Raza</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Dueño</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
