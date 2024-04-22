@@ -3,6 +3,7 @@
 @section("title", " Listado de Dueños ")
 @section("content")
         <h1>Listado de Dueños</h1>
+        <a href="{{ route('dueños.create')}}" class="btn btn-success mb-3">Añadir Dueño</a>
         <table class="table">
             <thead>
                 <tr>
@@ -26,7 +27,12 @@
                     <td>{{ $dueño->telefono }}</td>
                     <td>{{ $dueño->email }}</td>
                     <td> 
-                    
+                      <a href="{{ route('dueños.edit', ['dueño' => $dueño->id])}}" class="btn btn-warning">Editar</a>
+                      <form action="{{ route('dueños.destroy', ['dueño' => $dueño->id])}}" method="POST" style="display: inline-block">
+                        @method('delete')
+                        @csrf
+                        <input type="submit" class="btn btn-danger" value="Eliminar">
+                    </form>
                     </td>
                 </tr>
               @endforeach  

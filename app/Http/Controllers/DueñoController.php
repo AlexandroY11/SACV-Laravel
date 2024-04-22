@@ -23,7 +23,8 @@ class DueñoController extends Controller
      */
     public function create()
     {
-        //
+             
+        return view('dueños.create');
     }
 
     /**
@@ -31,7 +32,9 @@ class DueñoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dueños = Dueño::create($request->all());
+
+        return redirect()->route('dueños.index', compact('dueños'));
     }
 
     /**
@@ -45,24 +48,27 @@ class DueñoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Dueño $dueño)
     {
-        //
+        return view('dueños.edit', compact('dueño'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Dueño $dueño)
     {
-        //
+        $dueño->update($request ->all());
+        return redirect()->route('dueños.index', $dueño);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $dueño= Dueño::find($id);
+        $dueño->delete();
+        return redirect()->route('dueños.index', $dueño);
     }
 }
