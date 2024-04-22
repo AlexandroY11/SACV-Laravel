@@ -25,7 +25,11 @@
                 <td>{{ $visita->motivo }}</td>
                 <td>{{ $visita->tratamiento }}</td>
                 <td> 
-                    
+                    <form action="{{ route('visitas.destroy', ['visita' => $visita->id])}}" method="POST" style="display: inline-block">
+                        @method('delete')
+                        @csrf
+                        <input type="submit" class="btn btn-danger" value="Eliminar">
+                    </form>
                 </td>
             </tr>
         @endforeach  

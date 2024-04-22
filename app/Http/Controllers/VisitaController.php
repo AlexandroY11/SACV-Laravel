@@ -74,8 +74,16 @@ class VisitaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy( $id)
     {
-        //
+        $visita = Visita::find($id);
+        $visita->delete();
+
+        $visitas = DB::table('visitas')
+            ->join('mascotas', 'visitas.mascota_id', '=', 'mascotas.id')
+            ->select('visitas.*', "mascotas.nombre")
+            ->get();
+
+        return redirect()->route('visitas.index',compact('visitas'));
     }
 }
