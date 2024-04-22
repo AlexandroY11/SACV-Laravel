@@ -3,6 +3,7 @@
 @section("title", "Visitas")
 @section("content")
     <h1>Listado de Visitas</h1>
+    <a href="{{ route('visitas.create')}}" class="btn btn-success mb-3">Añadir Visita</a>
     <table class="table">
         <thead>
             <tr>

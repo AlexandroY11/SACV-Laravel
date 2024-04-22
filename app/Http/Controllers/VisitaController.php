@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Visita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -25,7 +26,10 @@ class VisitaController extends Controller
      */
     public function create()
     {
-        //
+        $mascotas = DB::table('mascotas')
+            ->orderBy('id')
+            ->get();
+        return view('visitas.create', compact('mascotas'));
     }
 
     /**
@@ -33,7 +37,14 @@ class VisitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $visitas = Visita::create($request->all());
+
+        $visitas = DB::table('visitas')
+            ->join('mascotas', 'visitas.mascota_id', '=', 'mascotas.id')
+            ->select('visitas.*', "mascotas.nombre")
+            ->get();
+
+        return redirect()->route('visitas.index',compact('visitas'));
     }
 
     /**
