@@ -25,6 +25,7 @@
                 <td>{{ $visita->motivo }}</td>
                 <td>{{ $visita->tratamiento }}</td>
                 <td> 
+                    <a href="{{ route('visitas.edit', ['visita' => $visita->id])}}" class="btn btn-warning">Editar</a>
                     <form action="{{ route('visitas.destroy', ['visita' => $visita->id])}}" method="POST" style="display: inline-block">
                         @method('delete')
                         @csrf

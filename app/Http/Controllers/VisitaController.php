@@ -58,17 +58,28 @@ class VisitaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Visita $visita)
     {
-        //
+        $mascotas = DB::table('mascotas')
+            ->orderBy('id')
+            ->get();
+        
+        return view('visitas.edit', compact('visita'), compact('mascotas'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Visita $visita)
     {
-        //
+        $visita->update($request->all());
+
+        $visitas = DB::table('visitas')
+            ->join('mascotas', 'visitas.mascota_id', '=', 'mascotas.id')
+            ->select('visitas.*', "mascotas.nombre")
+            ->get();
+
+            return redirect()->route('visitas.index',compact('visitas'));
     }
 
     /**
