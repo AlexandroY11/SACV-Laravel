@@ -1,6 +1,6 @@
-@extends("layouts.plantilla")
+@extends("layouts.app")
 
-@section("title", " Listado de Dueños ")
+@section("title", "Dueños")
 @section("content")
         <h1>Listado de Dueños</h1>
         <a href="{{ route('dueños.create')}}" class="btn btn-success mb-3">Añadir Dueño</a>

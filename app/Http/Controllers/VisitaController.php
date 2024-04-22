@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VisitaController extends Controller
 {
@@ -11,7 +12,12 @@ class VisitaController extends Controller
      */
     public function index()
     {
-        //
+        $visitas = DB::table('visitas')
+            ->join('mascotas', 'visitas.mascota_id', '=', 'mascotas.id')
+            ->select('visitas.*', "mascotas.nombre")
+            ->get();
+
+        return view('visitas.index', compact('visitas'));
     }
 
     /**

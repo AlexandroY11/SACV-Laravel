@@ -23,7 +23,6 @@ class DueñoController extends Controller
      */
     public function create()
     {
-             
         return view('dueños.create');
     }
 

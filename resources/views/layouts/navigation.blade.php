@@ -15,10 +15,10 @@
                     <a class="nav-link" href="{{ route('mascotas.index') }}">{{ __('Mascotas') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('mascotas.index') }}">{{ __('Dueños') }}</a>
+                    <a class="nav-link" href="{{ route('dueños.index') }}">{{ __('Dueños') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('mascotas.index') }}">{{ __('Visitas') }}</a>
+                    <a class="nav-link" href="{{ route('visitas.index') }}">{{ __('Visitas') }}</a>
                 </li>
             </ul>
         </div>
