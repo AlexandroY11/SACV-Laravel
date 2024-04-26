@@ -29,16 +29,7 @@
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
     <div class="container-fluid bg-light" >
-        
-        <!-- Page Heading -->
-        @if (isset($header))
-            <header class="bg-dark">
-                <div class="container py-4">
-                    {{-- {{ $header }} --}}
-                    @include('layouts.navigation')
-                </div>
-            </header>
-        @endif
+        @include('layouts.navigation')       
 
         <!-- Page Content -->
         <main class="container mt-4" style="padding: 50px 0 50px 0;">
