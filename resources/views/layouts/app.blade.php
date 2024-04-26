@@ -24,13 +24,13 @@
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
     <div class="container-fluid bg-light" >
-        @include('layouts.navigation')
-
+        
         <!-- Page Heading -->
         @if (isset($header))
             <header class="bg-dark">
                 <div class="container py-4">
-                    {{ $header }}
+                    {{-- {{ $header }} --}}
+                    @include('layouts.navigation')
                 </div>
             </header>
         @endif
