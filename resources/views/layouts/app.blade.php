@@ -32,7 +32,7 @@
         @include('layouts.navigation')       
 
         <!-- Page Content -->
-        <main class="container mt-4" style="padding: 50px 0 50px 0;">
+        <main class="container mt-4" style="padding: 100px 0 50px 0;">
             @yield('content')
         </main>
         @include('layouts.footer')
