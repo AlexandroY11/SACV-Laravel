@@ -94,13 +94,17 @@ class MascotaController extends Controller
     public function destroy($id)
     {
         $mascota = Mascota::find($id);
+
+        if (!$mascota) {
+            return redirect()->route('mascotas.index')->with('error', 'La mascota no existe.');
+        }
+
+        if ($mascota->visitas->isNotEmpty()) {
+            return redirect()->route('mascotas.index')->with('error', 'No se puede eliminar la mascota porque tiene visitas asociadas. Por favor, elimine las visitas primero.');
+        }
+
         $mascota->delete();
 
-        $mascotas = DB::table('mascotas')
-            ->join('dueños', 'mascotas.dueño_id', '=', 'dueños.id')
-            ->select('mascotas.*', DB::raw("CONCAT(dueños.nombre, ' ', dueños.apellido) as nombre_dueño"))
-            ->get();
-
-        return redirect()->route('mascotas.index',compact('mascotas'));
+        return redirect()->route('mascotas.index')->with('success', 'La mascota ha sido eliminada exitosamente.');
     }
 }
