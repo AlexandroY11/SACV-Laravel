@@ -1,18 +1,36 @@
 @section('title', 'SACV Dashboard')
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
+@section('content')
+<div class="row" style="padding-bottom:50px;">
+    <div class="col-md-3">
+        <a href="{{ route('mascotas.index') }}" class="text-decoration-none">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Mascotas</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iste enim explicabo at illo vel? Sit, voluptas consectetur tenetur vero, ducimus consequuntur porro culpa debitis assumenda sunt voluptatibus nemo vel.</p>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
-</x-app-layout>
+    <div class="col-md-3">
+        <a href="{{ route('dueños.index') }}" class="text-decoration-none">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Dueños</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti neque quia ab fugiat voluptates nisi voluptatem fugit dolore sunt? Commodi amet aut iure blanditiis quibusdam delectus ipsum voluptas obcaecati nulla.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-3">
+        <a href="{{ route('visitas.index') }}" class="text-decoration-none">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Visitas</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In modi voluptatem dolore cum optio? Magni esse optio hic eaque quae repellendus accusantium incidunt, dicta eum ullam quisquam similique. Delectus, repellat?</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+@endsection
