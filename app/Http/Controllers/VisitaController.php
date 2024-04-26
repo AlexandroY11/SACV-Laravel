@@ -88,13 +88,16 @@ class VisitaController extends Controller
     public function destroy( $id)
     {
         $visita = Visita::find($id);
-        $visita->delete();
 
-        $visitas = DB::table('visitas')
-            ->join('mascotas', 'visitas.mascota_id', '=', 'mascotas.id')
-            ->select('visitas.*', "mascotas.nombre")
-            ->get();
+        if (!$visita) {
+            return redirect()->route('visitas.index')->with('error', 'La visita no existe.');
+        }
 
-        return redirect()->route('visitas.index',compact('visitas'));
+        try {
+            $visita->delete();
+            return redirect()->route('visitas.index')->with('success', 'La visita ha sido eliminada exitosamente.');
+        } catch (\Exception $e) {
+            return redirect()->route('visitas.index')->with('error', 'Ha ocurrido un error al intentar eliminar la visita.');
+        }
     }
 }
