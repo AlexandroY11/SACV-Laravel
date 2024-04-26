@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Visita extends Model
+{
+    use HasFactory;
+
+    protected $fillable = ['mascota_id', 'fecha_visita', 'motivo', 'tratamiento'];
+
+    public $timestamps = false;
+
+    public function mascota()
+    {
+        return $this->belongsTo(Mascota::class);
+    }
+}
