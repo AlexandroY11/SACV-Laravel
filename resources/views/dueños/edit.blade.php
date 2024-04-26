@@ -16,19 +16,19 @@
     </div>
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre del Dueño </label>
-        <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" name="nombre" placeholder="Nombre del dueño" value="{{$dueño->nombre}}">
+        <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" name="nombre" placeholder="Nombre del dueño" value="{{$dueño->nombre}}" pattern="[A-Za-z]+">
     </div>
     <div class="mb-3">
         <label for="apellido" class="form-label">Apellido del Dueño</label>
-        <input type="text" class="form-control" id="apellido" aria-describedby="apellidoHelp" name="apellido" placeholder="Apellido del dueño" value="{{$dueño->apellido}}">
+        <input type="text" class="form-control" id="apellido" aria-describedby="apellidoHelp" name="apellido" placeholder="Apellido del dueño" value="{{$dueño->apellido}}" pattern="[A-Za-z]+">
     </div>
     <div class="mb-3">
         <label for="telefono" class="form-label">Telefono</label>
-        <input type="text" class="form-control" id="telefono" aria-describedby="telefonoHelp" name="telefono" placeholder="Telefono del dueño" value="{{$dueño->telefono}}">
+        <input type="text" class="form-control" id="telefono" aria-describedby="telefonoHelp" name="telefono" placeholder="Telefono del dueño" value="{{$dueño->telefono}}"  pattern="[0-9]{1,10}">
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="text" class="form-control" id="email" aria-describedby="razaHelp" name="email" placeholder="Email del dueño" value="{{$dueño->email}}">
+        <input type="email" class="form-control" id="email" aria-describedby="razaHelp" name="email" placeholder="Email del dueño" value="{{$dueño->email}}">
     </div>
     <div class="mb-3">
         <label for="direccion" class="form-label">Dirección</label>
