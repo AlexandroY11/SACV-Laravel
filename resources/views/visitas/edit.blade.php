@@ -32,7 +32,7 @@
 
     <div class="mb-3">
         <label for="fecha" class="form-label">Fecha de la visita</label>
-        <input type="text" class="form-control" id="fecha" aria-describedby="fechaHelp" name="fecha_visita" placeholder="Fecha de la visita de la Visita" value="{{$visita->fecha_visita}}">
+        <input type="date" class="form-control" id="fecha" aria-describedby="fechaHelp" name="fecha_visita" placeholder="Fecha de la visita de la Visita" value="{{$visita->fecha_visita}}">
     </div>
     <div class="mb-3">
         <label for="motivo" class="form-label">Motivo</label>

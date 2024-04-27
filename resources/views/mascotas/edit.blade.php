@@ -16,20 +16,20 @@
     </div>
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre de Mascota</label>
-        <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" name="nombre" placeholder="Nombre de la Mascota" value="{{$mascota->nombre}}">
+        <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" name="nombre" placeholder="Nombre de la Mascota" value="{{$mascota->nombre}}" pattern="[A-Za-z]+" required>
     </div>
 
     <div class="mb-3">
         <label for="especie" class="form-label">Especie</label>
-        <input type="text" class="form-control" id="especie" aria-describedby="especieHelp" name="especie" placeholder="Especie de la Mascota" value="{{$mascota->especie}}">
+        <input type="text" class="form-control" id="especie" aria-describedby="especieHelp" name="especie" placeholder="Especie de la Mascota" value="{{$mascota->especie}}" pattern="[A-Za-z]+" required>
     </div>
     <div class="mb-3">
         <label for="raza" class="form-label">Raza</label>
-        <input type="text" class="form-control" id="raza" aria-describedby="razaHelp" name="raza" placeholder="Raza de la Mascota" value="{{$mascota->raza}}">
+        <input type="text" class="form-control" id="raza" aria-describedby="razaHelp" name="raza" placeholder="Raza de la Mascota" value="{{$mascota->raza}}" pattern="[A-Za-z]+" required>
     </div>
     <div class="mb-3">
         <label for="edad" class="form-label">Edad</label>
-        <input type="number" class="form-control" id="edad" aria-describedby="edadHelp" name="edad" placeholder="Edad de la Mascota" value="{{$mascota->edad}}">
+        <input type="number" class="form-control" id="edad" aria-describedby="edadHelp" name="edad" placeholder="Edad de la Mascota" value="{{$mascota->edad}}" required>
     </div>
     <div class="mb-3">
         <label for="dueño" class="form-label">Dueño</label>

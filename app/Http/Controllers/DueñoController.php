@@ -66,8 +66,18 @@ class DueñoController extends Controller
      */
     public function destroy($id)
     {
-        $dueño= Dueño::find($id);
-        $dueño->delete();
-        return redirect()->route('dueños.index', $dueño);
+        $dueño = Dueño::find($id);
+
+        if (!$dueño) {
+            return redirect()->route('dueños.index')->with('error', 'El dueño no existe.');
+        }
+
+        try {
+            $dueño->delete();
+            return redirect()->route('dueños.index')->with('success', 'El dueño ha sido eliminado exitosamente.');
+        } catch (\Exception $e) {
+            return redirect()->route('dueños.index')->with('error', 'Ha ocurrido un error al intentar eliminar el dueño.');
+        }
     }
 }
+

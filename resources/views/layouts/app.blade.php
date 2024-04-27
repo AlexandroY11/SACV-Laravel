@@ -17,26 +17,22 @@
     {{-- Estilos personalizados --}}
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- CSS -->
+    <link href="{{ asset('resources/css/app.css') }}" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="{{ asset('resources/js/app.js') }}"></script>
+
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
     <div class="container-fluid bg-light" >
-        
-        <!-- Page Heading -->
-        @if (isset($header))
-            <header class="bg-dark">
-                <div class="container py-4">
-                    {{-- {{ $header }} --}}
-                    @include('layouts.navigation')
-                </div>
-            </header>
-        @endif
+        @include('layouts.navigation')       
 
         <!-- Page Content -->
-        <main class="container mt-4" style="padding: 50px 0 50px 0;">
+        <main class="container mt-4" style="padding: 100px 0 50px 0;">
             @yield('content')
         </main>
         @include('layouts.footer')
